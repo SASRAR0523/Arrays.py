@@ -259,6 +259,43 @@ pairs.sort()
 for a,b in pairs:
     print(a,b)
 
+#Input Format
+#The first line contains integers representing the nodes of the first linked list, ending with -1 to signify the end. The second line contains integers representing the nodes of the second linked list, ending with -1.
+
+#Output Format
+#Print the merged sorted linked list as space-separated integers, ending with -1.
+
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+a.remove(-1)
+b.remove(-1)
+
+c = a + b
+c.sort()
+
+print(*c, -1)
+
+#Count the number of unique elements in an ascending sorted array.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+count = 1
+unique = 0
+
+for i in range(1, n):
+    if arr[i] == arr[i - 1]:
+        count += 1
+    else:
+        if count == 1:
+            unique += 1
+        count = 1
+
+if count == 1:
+    unique += 1
+                                                
+print(unique)   
 
 
 
