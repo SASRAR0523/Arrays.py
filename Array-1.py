@@ -234,6 +234,37 @@ for i in range(n):
         if arr[i] > k:
             print(arr[i],arr[j])
 
+Input Format
+The first line contains two integers N and S, where N is the size of the array 'ARR' and S is the required sum.
+
+The second line contains N space-separated integers representing the array 'ARR'.
+
+Output Format
+Print each pair on a new line, where each pair consists of two integers separated by a space.
+
+n,m = map(int,input().split()
+arr = list(map(int,input().split()))
+
+pairs = []
+
+for i in range(n):
+    for j in range(i+1,n):
+        if arr[i] + arr[j] == m:
+            a = min(arr[i],arr[j])
+            b = max(arr[i],arr[j])
+            pairs.append((a,b))
+
+pairs.sort()
+
+for a,b in pairs:
+    print(a,b)
+
+
+
+
+
+
+
 
 
 
