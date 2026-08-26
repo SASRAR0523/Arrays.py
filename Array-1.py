@@ -297,6 +297,119 @@ if count == 1:
                                                 
 print(unique)   
 
+#Rearrange the array by moving all -1 elements to the beginning while maintaining
+#  the relative order of positive integers.
+
+import sys
+
+data = list(map(int, sys.stdin.read().split()))
+
+# if first number is size, skip it
+if len(data) > 1 and data[0] == len(data) - 1:
+    arr = data[1:]
+else:
+    arr = data
+
+neg = []
+pos = []
+
+for num in arr:
+    if num == -1:
+        neg.append(num)
+    else:
+        pos.append(num)
+
+result = neg + pos
+print(*result)
+
+#Rearrange the array by moving all 0 elements to the beginning while maintaining
+#  the relative order of positive integers.
+
+import sys
+
+data = list(map(int, sys.stdin.read().split()))
+
+# handle case where first number is size
+if len(data) > 1 and data[0] == len(data) - 1:
+    arr = data[1:]
+else:
+    arr = data
+
+zeros = []
+others = []
+
+for num in arr:
+    if num == 0:
+        zeros.append(num)
+    else:
+        others.append(num)
+
+result = zeros + others
+
+print(*result)
+
+#Rearrange the array by moving positive integers to the beginning and negative integers to 
+# the end while maintaining their relative order.
+
+import sys
+
+data = list(map(int, sys.stdin.read().split()))
+
+# handle case where first number is size
+if len(data) > 1 and data[0] == len(data) - 1:
+    arr = data[1:]
+else:
+    arr = data
+
+pos = []
+neg = []
+
+for num in arr:
+    if num >= 0:  
+        pos.append(num)
+    else:
+        neg.append(num)
+
+result = pos + neg
+print(*result)
+
+#Rearrange the array by moving -1 elements to 
+# the end while maintaining the relative order of positive integers.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+pos = []
+neg = []
+
+for num in arr:
+    if num == -1:
+        neg.append(num)
+    else:
+        pos.append(num)
+
+result = pos + neg
+
+print(*result)
+
+#Rearrange the array by moving 0 elements to 
+# the end while maintaining the relative order of positive integers.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+non_zeros = []
+zeros = []
+
+for num in arr:
+    if num == 0:
+        zeros.append(num)
+    else:
+        non_zero.append(num)
+
+result = non_zero + zeros
+
+print(*result)
 
 
 
