@@ -431,9 +431,20 @@ n = int(input())
 arr = list(map(int,input().split()))
 k = int(input())
 
+arr.sort(reverse=True)
 
+print(arr[k - 1])
 
+#Write a program that rotates an array of integers to the left by a given number of positions.
 
+n, d = map(int, input().split())
+arr = list(map(int, input().split()))
+
+d = d % n
+
+result = arr[d:] + arr[:d]
+
+print(*result)
 
 
 
