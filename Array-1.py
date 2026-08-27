@@ -411,6 +411,37 @@ result = non_zero + zeros
 
 print(*result)
 
+#Find the number of times a given integer is repeated in a sorted array.
+
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+
+count = 0
+
+for num in arr:
+    if num == k:
+        count += 1
+
+print(count)
+
+#Given an array of integers, find and print the Kth largest element in the array.
+
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
