@@ -446,13 +446,62 @@ result = arr[d:] + arr[:d]
 
 print(*result)
 
+#Calculate the sum of all subarrays of given size from a given array.
+
+k = int(input())
+n = int(input())
+arr = list(map(int,input().split()))
+
+for i in range(n - k+1):
+    total = 0
+
+    for j in range(i,i+k):
+        total += arr[j]
+            
+    print(total, end=" ") 
+
+#Given two arrays of integers, find and print their intersection. The intersection of two arrays consists of all the elements that are present in both arrays. 
+#Each element in the output should appear as many times as it shows in both arrays.
+
+n = int(input())
+arr1 = list(map(int,input().split()))
+
+m = int(input())
+arr2 = list(map(int,input().split()))
 
 
+count = {}
 
+for num in arr1:
+    count[num] = count.get(num, 0) + 1
 
+result = []
 
+for num in arr2:
+    if count.get(num, 0) > 0:
+        result.append(num)
+        count[num] -= 1
+result
+print(*result)
 
+#Given an integer array 'ARR' of size 'N' and an integer 'S', return the list of all pairs of elements such that the sum of each pair equals 'S'. 
+#Each pair should be sorted, with the first value less than or equal to the second value. 
+#The list of pairs should be sorted in non-decreasing order of their first values, and in case of ties, the pair with the smaller second value should come first.
 
+n, m = map(int, input().split())
+arr = list(map(int, input().split()))
+
+pairs = []
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if arr[i] + arr[j] == m:
+            pairs.append((min(arr[i], arr[j]), max(arr[i], arr[j])))
+
+pairs.sort()
+
+for a, b in pairs:
+    print(a, b)
 
 
 
