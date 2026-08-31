@@ -503,6 +503,54 @@ pairs.sort()
 for a, b in pairs:
     print(a, b)
 
+#Given an array of integers of size N, find and display the second largest element present in the array.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+arr.sort()
+
+print(arr[-2])
+
+#Given two arrays of integers, find and print their intersection.
+#The intersection of two arrays consists of all the elements that are present in both arrays. 
+#Each element in the output should appear as many times as it shows in both arrays.
+
+n = int(input())
+arr1 = list(map(int,input().split()))
+
+m = int(input())
+arr2 = list(map(int,input().split()))
+
+
+count = {}
+
+for num in arr1:
+     count[num] = count.get(num, 0) + 1
+
+result = []
+
+for num in arr2:
+    if count.get(num, 0) > 0:
+        result.append(num)
+        count[num] -= 1
+result
+print(*result)
+
+#Print all pairs of numbers from a given array where the first value is strictly smaller than the second value.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+for i in range(n):
+    for j in range(i+1,n):
+        if arr[i] < arr[j]:
+            print(arr[i],arr[j])
+
+
+
+
+
 
 
 
