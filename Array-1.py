@@ -547,6 +547,36 @@ for i in range(n):
         if arr[i] < arr[j]:
             print(arr[i],arr[j])
 
+#Write a program that rotates an array of integers to the left by a given number of positions.
+
+n, d = map(int, input().split())
+arr = list(map(int, input().split()))
+
+d = d % n
+
+arr = arr[d:] + arr[:d]
+
+print(*arr)
+
+#
+
+import sys
+
+def solve():
+    data = sys.stdin.read().split()
+    idx = 0
+    N = int(data[idx]); idx += 1
+    A = int(data[idx]); idx += 1
+    B = int(data[idx]); idx += 1
+    P = list(map(int, data[idx:idx + N])); idx += N
+
+    # dp[i] = max XP obtainable starting from monster index i (0-indexed) to the end
+    dp = [0] * (N + 1)  # dp[N] = 0, no monsters left
+
+#
+
+
+
 
 
 
