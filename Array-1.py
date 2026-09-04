@@ -573,7 +573,45 @@ def solve():
     # dp[i] = max XP obtainable starting from monster index i (0-indexed) to the end
     dp = [0] * (N + 1)  # dp[N] = 0, no monsters left
 
-#
+#You are given an array of integers. Your task is to find and return the third-largest element in the array. 
+#If the array contains less than three elements, return the maximum element.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+arr = list(set(arr))
+arr.sort(reverse=True)
+
+if len(arr) < 3:
+    print(arr[0])
+else:
+    print(arr[2])
+
+#Find the longest subarray in a given array whose sum is equal to a specified value K.
+
+k = int(input())
+n = int(input())
+arr = list(map(int, input().split()))
+
+longest = []
+
+for i in range(n):
+    total = 0
+
+    for j in range(i, n):
+        total += arr[j]
+
+        if total == k:
+            if j - i + 1 > len(longest):
+                longest = arr[i:j+1]
+
+if longest:
+    print(*longest)
+else:
+    print("No subarray found.")
+
+
+
 
 
 
