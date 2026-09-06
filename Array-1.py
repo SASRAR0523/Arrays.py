@@ -610,6 +610,35 @@ if longest:
 else:
     print("No subarray found.")
 
+# Write a program that takes an integer n and an array of n integers as input and returns the contiguous subarray with the largest sum along with the sum.
+
+n = int(input())
+a = list(map(int, input().split()))
+
+current = a[0]
+maximum = a[0]
+
+start = 0
+best_start = 0
+best_end = 0
+
+for i in range(1, n):
+
+    if a[i] > current + a[i]:
+        current = a[i]
+        start = i
+    else:
+        current = current + a[i]
+
+    if current > maximum:
+        maximum = current
+        best_start = start
+        best_end = i
+
+print(maximum)
+
+for i in range(best_start, best_end + 1):
+    print(a[i], end=" ")
 
 
 
