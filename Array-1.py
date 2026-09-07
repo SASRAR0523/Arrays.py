@@ -640,6 +640,52 @@ print(maximum)
 for i in range(best_start, best_end + 1):
     print(a[i], end=" ")
 
+# Given an array of float values with a size of N, write a program to display all the elements contained within the array.
+
+n = int(input())
+arr = list(map(float,input().split()))
+
+for x in arr:
+    print(x, end = " ")
+
+# Given an array of integer values of size N, print all the elements present in the array in reverse order.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+for i in range(n - 1,-1,-1):
+    print(arr[i],end= " " )
+
+# Given an array of integers of size N, print all the elements present at even indices.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+for i in range(0,n,2):
+    print(arr[i],end = " ")
+
+# Given an array of integers of size N, print all the elements present at odd indices.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+if n < 2:
+    print("None")
+else:
+    for i in range(1, n, 2):
+        print(a[i], end=" ")
+
+# 
+
+
+
+
+
+
+
+
+
+
 
 
 
