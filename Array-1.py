@@ -675,7 +675,96 @@ else:
     for i in range(1, n, 2):
         print(a[i], end=" ")
 
-# 
+# Given an array of integers with a size of N, find and print all the pairs having positive and negative values of a number that exists in the array.
+
+n = int(input())
+arr = list(map(int,input().split()))
+
+s = set(arr)
+used = set()
+found = False
+
+for num in arr:
+    if num in used:
+        continue
+
+    if -num in s:
+        print(num, -num)
+        found = True
+        used.add(num)
+        used.add(-num)
+
+if not found:
+    print("No pairs found")
+
+# Given an array of integers with a size of N, print all the pairs whose product is negative.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+found = False
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if arr[i] * arr[j] < 0:
+            print(arr[i], arr[j])
+            found = True
+
+if not found:
+    print("No pairs found")
+
+# Given an array of integers with a size of N, print all the pairs whose sum is greater than K.
+
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+
+found = False
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if arr[i] + arr[j] > k:
+            print(arr[i], arr[j])
+            found = True
+
+if not found:
+    print("No pairs found")
+
+# Given an array of integers with a size of N, print all the pairs where both the first and second value are factors of K.
+
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+
+found = False
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if k % arr[i] == 0 and k % arr[j] == 0:
+            print(arr[i], arr[j])
+            found = True
+
+if not found:
+    print("No pairs found")
+
+# Given an array of integers with a size of N, print all the pairs whose difference(first-second) is negative.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+found = False
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if arr[i] - arr[j] < 0:
+            print(arr[i], arr[j])
+            found = True
+
+if not found:
+    print("No pairs found")
+
+
+
 
 
 
