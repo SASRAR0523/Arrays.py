@@ -763,6 +763,30 @@ for i in range(n):
 if not found:
     print("No pairs found")
 
+# A video player character competes in a hurdle race with varying heights. The character can jump a maximum height
+# naturally and can take a magic potion to increase the jump height. The task is to find how many doses of potion 
+# the character must take to jump all hurdles, or return 0 if they can already clear all hurdles.
+
+def solve():
+        # Read n and k
+    n, k = map(int, input().split())
+    heights = list(map(int, input().split()))
+
+    max_height = heights[0]
+    for i in range(1, n):
+        if heights[i] > max_height:
+            max_height = heights[i]
+
+
+    if max_height <= k:
+        print(0)
+    else:
+        doses_needed = max_height - k
+        print(doses_needed)
+
+
+solve()
+
 
 
 
