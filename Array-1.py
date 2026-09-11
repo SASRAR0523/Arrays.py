@@ -787,7 +787,19 @@ def solve():
 
 solve()
 
+# Given an array representing the stock prices of each day, find the maximum profit you can achieve by buying and 
+# selling the stock any number of times. Note that you must sell the stock before buying again, and you cannot hold multiple stocks at the same time.
 
+n = int(input())
+prices = list(map(int, input().split()))
+
+profit = 0
+
+for i in range(1, n):
+    if prices[i] > prices[i - 1]:
+        profit += prices[i] - prices[i - 1]
+
+print(profit)
 
 
 
