@@ -801,7 +801,59 @@ for i in range(1, n):
 
 print(profit)
 
+# Given an array arr[] of distinct elements of size n that is sorted and then rotated around an unknown point, 
+# the task is to check if the array has a pair with a sum equal to a given target.
 
+ n = int(input())
+arr = list(map(int, input().split()))
+target = int(input())
+
+print("true" if any(arr[i] + arr[j] == target for i in range(n) for j in range(i + 1, n)) else "false")
+
+# Write a program to rotate an array by k positions to the right.
+
+n, k = map(int, input().split())
+arr = list(map(int, input().split()))
+
+k %= n
+arr = arr[-k:] + arr[:-k]
+
+print(*arr)
+
+# You are given an array/list `ARR` consisting of `N` integers. Your task is to find the majority element in the array. 
+# If there is no majority element, print `-1`. A majority element is an element that appears more than `floor(N / 2)` times in the array.
+
+T = int(input())
+
+for _ in range(T):
+    n = int(input())
+    arr = list(map(int, input().split()))
+
+    majority = -1
+
+    for x in set(arr):
+        if arr.count(x) > n // 2:
+            majority = x
+            break
+
+    print(majority)
+# You are given an array of integers. Your task is to find the maximum sum among all possible subarrays using a queue-based approach.
+# A subarray is a contiguous part of the array.
+
+n = int(input())
+
+if n == 0:
+    print(0)
+else:
+    arr = list(map(int, input().split()))
+
+    current = maximum = arr[0]
+
+    for x in arr[1:]:
+        current = max(x, current + x)
+        maximum = max(maximum, current)
+
+    print(maximum)
 
 
 
