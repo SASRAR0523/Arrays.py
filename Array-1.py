@@ -855,6 +855,20 @@ else:
 
     print(maximum)
 
+# For a given integer array 'ARR' of size 'N' containing all distinct values, find the total number of inversions.
+# An inversion is defined for a pair of integers in the array when 'ARR[i] > ARR[j]' and 'i < j'.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+count = 0
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if arr[i] > arr[j]:
+            count += 1
+
+print(count)
 
 
 
