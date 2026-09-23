@@ -872,7 +872,27 @@ print(count)
 
 ##################
 
+T = int(input())
 
+for _ in range(T):
+    n = int(input())
+    arr = list(map(int, input().split()))
+
+    i = 0
+    while i < n:
+        x = arr[i]
+
+        if 1 <= x <= n and arr[x - 1] != x:
+            arr[i], arr[x - 1] = arr[x - 1], arr[i]
+        else:
+            i += 1
+
+    for i in range(n):
+        if arr[i] != i + 1:
+            print(i + 1)
+            break
+    else:
+        print(n + 1)
 
 
 
