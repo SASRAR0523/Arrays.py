@@ -894,9 +894,19 @@ for _ in range(T):
     else:
         print(n + 1)
 
+# You are given an array of $N$ integers representing chocolate packets on a conveyor belt, where empty packets are represented by 0.
+# Your task is to find all the empty packets (0) and push them to the end of the array while maintaining the exact relative order of the non-zero packets.Input Format
 
+n = int(input())
+arr = list(map(int, input().split()))
 
+pos = 0
+for i in range(n):
+    if arr[i] != 0:
+        arr[pos], arr[i] = arr[i], arr[pos]
+        pos += 1
 
+print(*(arr))
 
 
 
