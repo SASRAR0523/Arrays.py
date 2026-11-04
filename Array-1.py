@@ -908,6 +908,12 @@ for i in range(n):
 
 print(*(arr))
 
+# Write a program to find the largest element in a given array.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+print(max(arr))
 
 
 
