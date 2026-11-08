@@ -1,4 +1,4 @@
-# print all pairs in the array
+ji# print all pairs in the array
 
 n = int(input("Enter array size : "))
 arr = list(map(int,input().split()))
@@ -915,6 +915,19 @@ arr = list(map(int, input().split()))
 
 print(max(arr))
 
+# Find the Third Largest Element in an Array
+
+ 
+n = int(input())
+arr = list(map(int, input().split()))
+
+arr = list(set(arr))
+arr.sort(reverse=True)
+
+if len(arr) >= 3:
+    print(arr[2])
+else:
+    print("Not Possible")
 
 
 
