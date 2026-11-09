@@ -929,6 +929,21 @@ if len(arr) >= 3:
 else:
     print("Not Possible")
 
+# Given a sorted array of integers, print all the elements of the array that are perfect squares.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+found = False
+
+for i in arr:
+    if i >= 0:
+        if int(i ** 0.5) ** 2 == i:
+            print(i, end=" ")
+            found = True
+
+if not found:
+    print(-1)
 
 
 
