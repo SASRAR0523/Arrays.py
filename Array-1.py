@@ -945,6 +945,21 @@ for i in arr:
 if not found:
     print(-1)
 
+# Given a sorted array of integers, print the elements that appear more than once in the array.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+result = []
+
+for i in range(n - 1):
+    if arr[i] == arr[i + 1] and arr[i] not in result:
+        result.append(arr[i])
+
+if len(result) == 0:
+    print(-1)
+else:
+    print(*result)
 
 
 
