@@ -961,9 +961,40 @@ if len(result) == 0:
 else:
     print(*result)
 
+# Print all possible subarrays of size K from a given array.
 
+k = int(input())
+n = int(input())
 
+arr = list(map(int, input().split()))
 
+for i in range(n-k+1):
+    for j in range(i,i+k):
+        print(arr[j],end=" ")
+    print()
+
+# Given an array of N integers, count the number of distinct values that occur more than once and the number of distinct values that occur exactly once.
+# A repeated value is counted only once even if it appears multiple times in the array. A non-repeated value is a value whose frequency is exactly one.
+# The task is to print two integers: the count of repeated distinct values followed by the count of non-repeated distinct values.
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+freq = {}
+
+for num in arr:
+    freq[num] = freq.get(num, 0) + 1
+
+repeated = 0
+non_repeated = 0
+
+for count in freq.values():
+    if count > 1:
+        repeated += 1
+    else:
+        non_repeated += 1
+
+print(repeated, non_repeated)
 
 
 
