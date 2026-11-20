@@ -1,4 +1,4 @@
-ji# print all pairs in the array
+# print all pairs in the array
 
 n = int(input("Enter array size : "))
 arr = list(map(int,input().split()))
