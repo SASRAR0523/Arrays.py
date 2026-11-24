@@ -996,7 +996,20 @@ for count in freq.values():
 
 print(repeated, non_repeated)
 
+# Given an array of positive integers and a value M, find the smallest number X in the array such that X + Y = M. Y is any number in the array other than X. Print X and Y.
 
+n = int(input())
+arr = list(map(int, input().split()))
+m = int(input())
+
+s = set(arr)
+
+for x in sorted(arr):
+    y = m - x
+
+    if y in s and (y != x or arr.count(x) > 1):
+        print(x, y)
+        break
 
 
 
